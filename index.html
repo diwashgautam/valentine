@@ -1,10 +1,10 @@
-<!-- Valentine Surprise - Single File HTML (No React needed) -->
+<!-- Valentine Surprise - Multiple Photos Version (photo1.jpg ... photo10.jpg) -->
 <!-- Instructions:
-1. Create a new GitHub repository (e.g., valentine-for-divya)
-2. Add this file as index.html
-3. Click Settings → Pages → Choose 'main' branch → /(root) → Save
-4. Wait a minute, your live link will appear under GitHub Pages section
-5. Replace photo1.jpg and photo2.jpg in the same folder or host them online.
+1. Create a GitHub repository (e.g., valentine-for-divya)
+2. Upload this file as index.html
+3. Add your images as photo1.jpg, photo2.jpg, ... photo10.jpg in the same folder.
+4. Click Settings → Pages → Deploy from branch → main → /(root) → Save
+5. Wait for your live link to appear under GitHub Pages section.
 -->
 
 <!DOCTYPE html>
@@ -18,28 +18,41 @@
     body { background: linear-gradient(to bottom, #ffe4e6, #fff); }
     .fade-in { animation: fadeIn 1.5s ease forwards; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .photo-gallery img { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .photo-gallery img:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
   </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-6">
-  <div class="max-w-3xl w-full bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="max-w-5xl w-full bg-white/80 backdrop-blur-md rounded-2xl shadow-xl p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
     <div class="flex flex-col items-center justify-center gap-4">
-      <div class="w-44 h-44 rounded-xl overflow-hidden shadow-lg">
-        <img src="photo1.jpg" alt="You" class="w-full h-full object-cover">
-      </div>
-      <h2 class="text-2xl font-semibold fade-in">A little surprise for Divya 💌</h2>
+      <h2 class="text-3xl font-semibold fade-in text-center">A little surprise for Divya 💌</h2>
       <p class="text-sm text-gray-600 text-center px-4 fade-in">Click the heart when you're ready — a question awaits.</p>
       <button id="askBtn" class="mt-2 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-pink-500 text-white font-medium shadow hover:scale-[1.02] active:scale-95 transition fade-in">❤️ Ask Divya</button>
       <p id="response" class="mt-4 text-center font-semibold"></p>
+
+      <div class="photo-gallery grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6">
+        <!-- 10 images -->
+        <img src="photo1.jpg" alt="photo1" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo2.jpg" alt="photo2" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo3.jpg" alt="photo3" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo4.jpg" alt="photo4" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo5.jpg" alt="photo5" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo6.jpg" alt="photo6" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo7.jpg" alt="photo7" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo8.jpg" alt="photo8" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo9.jpg" alt="photo9" class="rounded-xl object-cover w-40 h-40">
+        <img src="photo10.jpg" alt="photo10" class="rounded-xl object-cover w-40 h-40">
+      </div>
     </div>
 
     <div class="relative flex items-center justify-center">
       <div class="absolute inset-0 rounded-xl overflow-hidden">
-        <img src="photo2.jpg" alt="Together" class="w-full h-full object-cover brightness-90" />
+        <img src="photo1.jpg" alt="Together" class="w-full h-full object-cover brightness-90" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
       </div>
       <div class="relative z-10 text-center p-6">
         <h3 class="text-white text-3xl font-bold drop-shadow">Will you be my Valentine, Divya?</h3>
-        <p class="text-white/90 mt-2">Made with ❤ by Jiban — say it from the heart.</p>
+        <p class="text-white/90 mt-2">Made with ❤ by Jiban — from your favorite memories.</p>
         <div class="mt-4 flex gap-3 justify-center">
           <button id="yesBtn" class="px-4 py-2 rounded-full bg-white/90 hover:bg-white active:scale-95 transition font-medium">Yes 💕</button>
           <button id="noBtn" class="px-4 py-2 rounded-full bg-white/70 hover:bg-white active:scale-95 transition font-medium">Not yet</button>
